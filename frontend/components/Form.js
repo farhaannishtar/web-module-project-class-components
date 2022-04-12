@@ -15,7 +15,6 @@ export default class Form extends React.Component {
     })
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.add(e, this.state.todoText);
@@ -25,14 +24,14 @@ export default class Form extends React.Component {
   }
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input 
           type="text" 
           name="todo"
           value={this.state.todoText}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Add</button>
+        <button>Add</button>
       </form>
     )
   }
